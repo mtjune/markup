@@ -49,12 +49,9 @@
 			<tr>
 				<th>参考URL</th>
 				<td>
-					<a>
+					<a target="_blank">
 						<xsl:attribute name="href">
 							<xsl:value-of select="url/@resource" />
-						</xsl:attribute>
-						<xsl:attribute name="target">
-							_blank
 						</xsl:attribute>
 						<xsl:value-of select="url/@resource" />
 					</a>
