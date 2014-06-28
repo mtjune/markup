@@ -10,9 +10,7 @@ xslt = XML::XSLT.new()
 xslt.xml = "shoshi.xml"
 xslt.xsl = "ichiran.xsl"
 
-# out = xslt.serve()
+out = xslt.serve()
 
 print cgi.header("text/html; charset=UTF-8")
-# print out
-
-print "test"
+print out
