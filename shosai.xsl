@@ -17,9 +17,9 @@
 	<body>
 		<h1><xsl:value-of select="title" /></h1>
 		
-		<table border="1">
+		<table border="1" width="100">
 			<tr>
-				<th width="100">著者</th>
+				<th>著者</th>
 				<td><xsl:value-of select="creator" /></td>
 			</tr>
 			<tr>
