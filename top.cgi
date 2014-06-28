@@ -7,8 +7,8 @@ require("xml/xslt")
 cgi = CGI.new
 
 xslt = XML::XSLT.new()
-xslt.xml = "shoshi.xml"
-xslt.xsl = "ichiran.xsl"
+# xslt.xml = "shoshi.xml"
+# xslt.xsl = "ichiran.xsl"
 
 # out = xslt.serve()
 
