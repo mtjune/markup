@@ -2,7 +2,7 @@
 # encoding: utf-8
 
 require("cgi")
-# require("xml/xslt")
+require("xml/xslt")
 
 cgi = CGI.new
 
