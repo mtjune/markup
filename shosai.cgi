@@ -1,8 +1,8 @@
 #!/usr/bin/ruby
 # -*- encoding: utf-8 -*-
 
-require("cgi")
-require("xml/xslt")
+require 'cgi'
+require 'xml/xslt'
 
 query_array = ENV["QUERY_STRING"].split("=")
 query = query_array[1]
