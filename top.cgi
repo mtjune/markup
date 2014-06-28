@@ -13,4 +13,10 @@ xslt.xsl = "ichiran.xsl"
 out = xslt.serve()
 
 print cgi.header("text/html; charset=UTF-8")
+print <<EOS
+
+EOS
 print out
+print <<EOS
+
+EOS
