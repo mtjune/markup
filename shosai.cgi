@@ -4,6 +4,8 @@
 require 'cgi'
 require 'xml/xslt'
 
+cgi = CGI.new
+
 query_array = ENV["QUERY_STRING"].split("=")
 query = query_array[1]
 
