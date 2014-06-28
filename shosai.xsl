@@ -49,7 +49,7 @@
 			<tr>
 				<th>参考URL</th>
 				<td>
-					<a target="_blank">
+					<a>
 						<xsl:attribute name="href">
 							<xsl:value-of select="url/@resource" />
 						</xsl:attribute>
