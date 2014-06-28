@@ -17,7 +17,7 @@
 	<body>
 		<h1><xsl:value-of select="title" /></h1>
 		
-		<table border="1" width="80%">
+		<table border="1">
 			<tr>
 				<th>著者</th>
 				<td><xsl:value-of select="creator" /></td>
@@ -44,11 +44,11 @@
 			</tr>
 			<tr>
 				<th>説明</th>
-				<td><xsl:value-of select="description" /></td>
+				<td width="200"><xsl:value-of select="description" /></td>
 			</tr>
 			<tr>
 				<th>参考URL</th>
-				<td>
+				<td width="200">
 					<a>
 						<xsl:attribute name="href">
 							<xsl:value-of select="url/@resource" />
