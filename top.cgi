@@ -1,8 +1,8 @@
-#!/usr/bin/env ruby
-# encoding: utf-8
+#!/usr/bin/ruby
+# -*- encoding: utf-8 -*-
 
-require 'cgi'
-require 'xml/xslt'
+require("cgi")
+require("xml/xslt")
 
 cgi = CGI.new
 
@@ -13,10 +13,4 @@ xslt.xsl = "ichiran.xsl"
 out = xslt.serve()
 
 print cgi.header("text/html; charset=UTF-8")
-print <<EOS
-
-EOS
 print out
-print <<EOS
-
-EOS
