@@ -19,8 +19,8 @@
 		
 		<table border="1">
 			<tr>
-				<th>著者</th>
-				<td><xsl:value-of select="creator" /></td>
+				<th width="50">著者</th>
+				<td width="200"><xsl:value-of select="creator" /></td>
 			</tr>
 			<tr>
 				<th>出版社</th>
