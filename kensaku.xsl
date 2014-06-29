@@ -20,19 +20,19 @@
 			<xsl:if test="string-length($s_auther)!=0">
 				著者：<xsl:value-of select="$s_auther" /><br>
 			</xsl:if>
-			並べ替え
+			並べ替え：
 			<xsl:choose>
 				<xsl:when test="contains($sortkey, 'title')">
-					<xsl:value-of select="'タイトル'" />
+					<xsl:text>タイトル</xsl:text>
 				</xsl:when>
 				<xsl:when test="contains($sortkey, 'creator')">
-					<xsl:value-of select="'著者'" />
+					<xsl:text>著者</xsl:text>
 				</xsl:when>
 				<xsl:when test="contains($sortkey, 'date')">
-					<xsl:value-of select="'出版日'" />
+					<xsl:text>出版日</xsl:text>
 				</xsl:when>
 				<xsl:when test="contains($sortkey, 'price')">
-					<xsl:value-of select="'価格'" />
+					<xsl:text>価格</xsl:text>
 				</xsl:when>
 			</xsl:choose>
 			<ul>
