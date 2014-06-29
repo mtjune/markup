@@ -19,7 +19,7 @@
 		
 		<table border="1" width="80%">
 			<tr>
-				<th width="100">著者</th>
+				<th>著者</th>
 				<td><xsl:value-of select="creator" /></td>
 			</tr>
 			<tr>
