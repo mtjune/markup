@@ -23,16 +23,16 @@
 			並べ替え
 			<xsl:choose>
 				<xsl:when test="contains($sortkey, 'title')">
-					タイトル
+					<xsl:value-of select="'タイトル'" />
 				</xsl:when>
 				<xsl:when test="contains($sortkey, 'creator')">
-					著者
+					<xsl:value-of select="'著者'" />
 				</xsl:when>
 				<xsl:when test="contains($sortkey, 'date')">
-					出版日
+					<xsl:value-of select="'出版日'" />
 				</xsl:when>
 				<xsl:when test="contains($sortkey, 'price')">
-					価格
+					<xsl:value-of select="'価格'" />
 				</xsl:when>
 			</xsl:choose>
 			<ul>
