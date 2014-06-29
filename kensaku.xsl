@@ -4,9 +4,8 @@
 
 <xsl:param name="s_title" select="''" />
 <xsl:param name="s_auther" select="''" />
-<xsl:param name="sortkey" select="'title'" />
+<xsl:param name="sortkey" select="'creator'" />
 
-<xsl:variable name="sortkeyv" select="'creator'" />
 
 <xsl:template match="/">
 	<html>
@@ -16,7 +15,7 @@
 		<body>
 			<ul>
 				<xsl:choose>
-					<xsl:when test="$sortkeyv=creator"><xsl:call-template name="sort_creator" /></xsl:when>
+					<xsl:when test="contains($sortkey, 'creator')"><xsl:call-template name="sort_creator" /></xsl:when>
 					<xsl:when test="$sortkey='date'"><xsl:call-template name="sort_date" /></xsl:when>
 					<xsl:when test="$sortkey='price'"><xsl:call-template name="sort_price" /></xsl:when>
 					<xsl:otherwise><xsl:call-template name="sort_title" /></xsl:otherwise>
