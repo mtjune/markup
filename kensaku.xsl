@@ -13,6 +13,28 @@
 			<title>shoshi</title>
 		</head>
 		<body>
+			<h2>検索語</h2>
+			<xsl:if test="not($s_title='')">
+				タイトル：<xsl:value-of select="$s_title" /><br>
+			</xsl:if>
+			<xsl:if test="not($s_auther='')">
+				著者：<xsl:value-of select="$s_auther" /><br>
+			</xsl:if>
+			並べ替え
+			<xsl:choose>
+				<xsl:when test="contains($sortkey, 'title')">
+					タイトル
+				</xsl:when>
+				<xsl:when test="contains($sortkey, 'creator')">
+					著者
+				</xsl:when>
+				<xsl:when test="contains($sortkey, 'date')">
+					出版日
+				</xsl:when>
+				<xsl:when test="contains($sortkey, 'price')">
+					価格
+				</xsl:when>
+			</xsl:choose>
 			<ul>
 				<xsl:choose>
 					<xsl:when test="contains($sortkey, 'creator')"><xsl:call-template name="sort_creator" /></xsl:when>
