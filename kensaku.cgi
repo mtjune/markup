@@ -10,7 +10,7 @@ cgi = CGI.new
 xslt = XML::XSLT.new()
 xslt.xml = "shoshi.xml"
 xslt.xsl = "kensaku.xsl"
-xslt.parameters = {"s_title" => cgi["title"], "s_auther" => cgi["auther"], "sort" => cgi["sortkey"]}
+xslt.parameters = {"s_title" => cgi["title"].to_s, "s_auther" => cgi["auther"].to_s, "sort" => cgi["sortkey"].to_s}
 
 out = xslt.serve()
 
