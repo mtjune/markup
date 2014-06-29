@@ -7,13 +7,15 @@
 <body>
 <h1>書誌検索システム</h1>
 <form action="kensaku.cgi" method="post">
-タイトル:<input type="text"><br>
-著者:<input type="text"><br>
+タイトル:<input type="text" name="title"><br>
+著者:<input type="text" name="auther"><br><br>
 並べ替え<br>
 <input type="radio" name="sort" value="title">タイトル
-<input type="radio" name="sort" value="auther">著者
+<input type="radio" name="sort" value="creator">著者
 <input type="radio" name="sort" value="date">出版日
 <input type="radio" name="sort" value="price">価格
+<br><br>
+<input type="submit" value="検索">  <input type="reset" value="空にする">
 </form>
 </body>
 </html>
