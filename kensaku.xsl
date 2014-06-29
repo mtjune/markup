@@ -20,7 +20,7 @@
 			<xsl:if test="string-length($s_auther)!=0">
 				著者：<xsl:value-of select="$s_auther" /><br>
 			</xsl:if>
-			並べ替え：
+			<!-- 並べ替え：
 			<xsl:choose>
 				<xsl:when test="contains($sortkey, 'title')">
 					<xsl:text>タイトル</xsl:text>
@@ -34,7 +34,7 @@
 				<xsl:when test="contains($sortkey, 'price')">
 					<xsl:text>価格</xsl:text>
 				</xsl:when>
-			</xsl:choose>
+			</xsl:choose> -->
 			<ul>
 				<xsl:choose>
 					<xsl:when test="contains($sortkey, 'creator')"><xsl:call-template name="sort_creator" /></xsl:when>
