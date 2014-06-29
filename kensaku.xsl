@@ -14,10 +14,10 @@
 		</head>
 		<body>
 			<h2>検索語</h2>
-			<xsl:if test="not($s_title='')">
+			<xsl:if test="$s_title!=''">
 				タイトル：<xsl:value-of select="$s_title" /><br>
 			</xsl:if>
-			<xsl:if test="not($s_auther='')">
+			<xsl:if test="$s_auther!=''">
 				著者：<xsl:value-of select="$s_auther" /><br>
 			</xsl:if>
 			並べ替え
