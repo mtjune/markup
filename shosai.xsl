@@ -24,8 +24,6 @@
 
 	<h3>↓似たカテゴリの書籍↓</h3>
 	<xsl:apply-templates select="books/item[(keywords/keyword = $key1) or (keywords/keyword = $key2) or (keywords/keyword = $key3)][@no != $query]" />
-	
-	
 
 	</body>
 	</html>
@@ -67,9 +65,7 @@
 			<tr>
 				<th>キーワード</th>
 				<td>
-					<xsl:value-of select="$key1" />,
-					<xsl:value-of select="$key2" />,
-					<xsl:value-of select="$key3" />
+					<xsl:apply-templates select="keywords/keyword" />
 				</td>
 			</tr>
 			<tr>
@@ -86,6 +82,13 @@
 		</table>
 	</div>
 	<hr />
+</xsl:template>
+
+<xsl:template match="keyword">
+	<xsl:value-of select="./text()" />
+	<xsl:if test="position() != last()">
+		<xsl:text>, </xsl:text>
+	</xsl:if>
 </xsl:template>
 
 </xsl:stylesheet>
