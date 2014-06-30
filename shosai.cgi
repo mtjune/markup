@@ -9,10 +9,12 @@ cgi = CGI.new
 query_array = ENV["QUERY_STRING"].split("=")
 query = query_array[1]
 
+random = rand(100)
+
 xslt = XML::XSLT.new()
 xslt.xml = "shoshi.xml"
 xslt.xsl = "shosai.xsl"
-xslt.parameters = {"query" => query}
+xslt.parameters = {"query" => query, "rondom" => random}
 
 out = xslt.serve()
 

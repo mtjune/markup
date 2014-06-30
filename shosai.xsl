@@ -3,18 +3,37 @@
 <xsl:output method="html" version="4.01" encoding="UTF-8" indent="yes" />
 
 <xsl:param name="query" select="'0'" />
+<xsl:param name="random" select="100" />
+
+<xsl:variable name="key1">
+	<xsl:value-of select="books/item[@no=$query]/keywords/keyword[1]" />
+</xsl:variable>
+<xsl:valuable name="key2">
+	<xsl:value-of select="books/item[@no=$query]/keywords/keyword[2]" />
+</xsl:valuable>
+<xsl:valuable name="key3">
+	<xsl:value-of select="books/item[@no=$query]/keywords/keyword[3]" />
+</xsl:valuable>
 
 <xsl:template match="/">
 	<html>
+	<head>
+		<title><xsl:value-of select="books/item[@no=$query]/title" /></title>
+	</head>
+	<body>
 		<xsl:apply-templates select="books/item[@no=$query]" />
+
+	<h3>↓似たカテゴリの書籍↓</h3>
+	<xsl:aplly-templates select="books/item[keywords/keyword = $key1][($random mod count(books/item[keywords/keyword = $key1])) + 1]" />
+	<xsl:aplly-templates select="books/item[keywords/keyword = $key2][($random mod count(books/item[keywords/keyword = $key2])) + 1]" />
+	<xsl:aplly-templates select="books/item[keywords/keyword = $key3][($random mod count(books/item[keywords/keyword = $key3])) + 1]" />
+
+	</body>
 	</html>
 </xsl:template>
 
 <xsl:template match="item">
-	<head>
-		<title><xsl:value-of select="title" /></title>
-	</head>
-	<body>
+	<div>
 		<h1><xsl:value-of select="title" /></h1>
 		
 		<table border="1" width="80%">
@@ -47,6 +66,14 @@
 				<td><xsl:value-of select="description" /></td>
 			</tr>
 			<tr>
+				<th>キーワード</th>
+				<td>
+					<xsl:value-of select="$key1" />,
+					<xsl:value-of select="$key2" />,
+					<xsl:value-of select="$key3" />
+				</td>
+			</tr>
+			<tr>
 				<th>参考URL</th>
 				<td>
 					<a>
@@ -58,7 +85,8 @@
 				</td>
 			</tr>
 		</table>
-	</body>
+	</div>
+	<hr>
 </xsl:template>
 
 </xsl:stylesheet>
