@@ -86,7 +86,7 @@
 			</tr>
 		</table>
 	</div>
-	<hr>
+	<hr />
 </xsl:template>
 
 </xsl:stylesheet>
